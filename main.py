@@ -5,11 +5,11 @@ def main():
     if choice == 1:
         print("Welcome to File Organizer")
         print("-"  * 30)
-        pass
+        organizer_folder()
 
 
 
 
 
-if __name__ == "__mian__":
+if __name__ == "__main__":
     main()

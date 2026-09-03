@@ -1,3 +1,4 @@
+from pathlib import Path 
 
 def main_menu():
  print("=" * 30)
@@ -27,6 +28,16 @@ def main_menu():
 
 def organizer_folder():
 
+  
+   
+   enter_path = input("Enter the path of folder you want to organize: ")
 
-  enter_path = input("Enter the path of folder you want to organize: ")
- 
+   base_dir = Path(enter_path)
+
+   if base_dir.exists():
+     if base_dir.is_dir():
+       print("Directory founded Successfully!")
+
+   else:
+     print("Not Founded!")
+
