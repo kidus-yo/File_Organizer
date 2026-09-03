@@ -1,4 +1,5 @@
-from pathlib import Path 
+from pathlib import Path
+import shutil 
 
 def main_menu():
  print("=" * 30)
@@ -28,16 +29,41 @@ def main_menu():
 
 def organizer_folder():
 
-  
-   
    enter_path = input("Enter the path of folder you want to organize: ")
 
    base_dir = Path(enter_path)
+   for p in base_dir.iterdir():
+    
+      if p.is_file():
+       if p.suffix == '.png' or p.suffix == '.jpg':
+         s = Path(base_dir / "images")
+         s.mkdir(parents=True, exist_ok=True)
+         shutil.move(p, base_dir / "images")
+         print("Organized Successfully✅")
 
-   if base_dir.exists():
-     if base_dir.is_dir():
-       print("Directory founded Successfully!")
+       elif p.suffix == '.txt':
+         s = Path(base_dir / "Text")
+         s.mkdir(parents=True, exist_ok=True)
+         shutil.move(p, base_dir / "Text")
+         print("Organized Successfully")
 
-   else:
-     print("Not Founded!")
+       elif p.suffix == '.mp3':
+         s = Path(base_dir / "Musics")
+         s.mkdir(parents=True, exist_ok=True)
+         shutil.move(p, base_dir / "Musics")
+         print("Organized Successfully!")
+
+       elif p.suffix == ".exe":
+         s = Path(base_dir / "Executable")
+         s.mkdir(parents=True, exist_ok=True)
+         shutil.move(p, base_dir / "Executable")
+         print("Organized Successful!✅")
+
+       elif p.suffix == ".mp4" or p.suffix == ".mov":
+         s = Path(base_dir / "Videos")
+         s.mkdir(parents=True, exist_ok=True)
+         shutil.move(p, base_dir / "Videos")
+         print("Organized Successful✅")
+       else:
+          print("File Not Supported")
 
