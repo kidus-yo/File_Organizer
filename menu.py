@@ -33,7 +33,6 @@ def organizer_folder():
 
    base_dir = Path(enter_path)
    for p in base_dir.iterdir():
-    
       if p.is_file():
        if p.suffix == '.png' or p.suffix == '.jpg':
          s = Path(base_dir / "images")
@@ -66,4 +65,12 @@ def organizer_folder():
          print("Organized Successful✅")
        else:
           print("File Not Supported")
+
+def view_files():
+  enter_Path = input("Enter path Folder: ")
+
+  base_dir = Path(enter_Path)
+  for p in base_dir.iterdir():
+    if p.is_file():
+      print(f"File_Names: {p.name}" )
 

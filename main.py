@@ -7,7 +7,10 @@ def main():
         print("-"  * 30)
         organizer_folder()
 
-
+    elif choice == 2:
+        print("Welcome to View Files")
+        print("-" * 30)
+        view_files()
 
 
 
