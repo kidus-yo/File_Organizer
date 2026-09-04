@@ -22,5 +22,13 @@ def main():
         print("-" * 30)
         organize_extension()
 
+    elif choice == 5:
+        print("Welcome to Search Files")
+        print("-" * 30)
+        search_files()
+
+    
+
+
 if __name__ == "__main__":
     main()

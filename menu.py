@@ -116,5 +116,21 @@ def organize_extension():
       s = Path(base_dir / p.suffix)
       s.mkdir(parents=True, exist_ok=True)
       shutil.move(p, base_dir/p.suffix)
-    else:
-      print("Unsupported File")
+      print("Organized Successfully!")
+
+def search_files():
+ 
+  while True:
+    enter_path = input("Enter Path")
+    name = input("Enter the name of the file: ")
+    try: 
+      base_dir = Path(enter_path)
+      for p in base_dir.iterdir():
+        if p.name == name:
+          print("File Founded Successfully!")
+          break
+        else:
+          print("File Not Foumd")
+    except FileNotFoundError:
+      print("File Not Found")
+
