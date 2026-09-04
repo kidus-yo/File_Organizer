@@ -12,7 +12,10 @@ def main():
         print("-" * 30)
         view_files()
 
-
+    elif choice == 3:
+        print("Welcome to view file catagories")
+        print("-" * 30)
+        view_catagories()
 
 if __name__ == "__main__":
     main()

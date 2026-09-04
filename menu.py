@@ -14,10 +14,11 @@ def main_menu():
 
  print("1. Organize Folder")
  print("2. View Files")
- print("3. View File Catagories")
+ print("C3. View File Types")
  print("4. Organize by extension")
  print("5. Search Files")
  print("6. View Folder Statstics")
+
  try:
     choice = int(input("Enter your choice: "))
     return choice 
@@ -74,3 +75,33 @@ def view_files():
     if p.is_file():
       print(f"File_Names: {p.name}" )
 
+def view_filetypes():
+   enetr_path = input("Enter Path File: ")
+
+   count_1 = 0
+   count_2 = 0
+   count_3 = 0
+   count_4 = 0
+   count_5 = 0
+   count_6 = 0
+
+   base_dir = Path(enetr_path)
+   for p in base_dir.iterdir():
+     if p.suffix == '.jpg':
+      count_1 + 1
+     elif p.suffix == '.txt':
+       count_2 + 1
+     elif p.suffix == '.mp3':
+       count_3 + 1
+     elif p.suffix == '.mp4':
+       count_4 + 1
+     elif p.suffix == '.exe':
+       count_5 + 1
+     else:
+       count_6 + 1
+   print(f"Images: {count_1}")
+   print(f"Text: {count_2}")
+   print(f"Musics: {count_3}")
+   print(f"Videos: {count_4}")
+   print(f"Executable: {count_5}")
+   print(f"Others: {count_6}")
