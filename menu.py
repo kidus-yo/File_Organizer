@@ -134,3 +134,41 @@ def search_files():
     except FileNotFoundError:
       print("File Not Found")
 
+
+def folder_statstics():
+  print("==Folder Statstics==")
+  print()
+
+  enter_path = input("PLease enter a path: ")
+  count_1 = 0
+  count_2 = 0
+  count_3 = 0
+  count_4 = 0 
+  count_5 = 0
+  count_6 = 0
+  count_7 = 0
+  base_dir = Path(enter_path)
+  for p in base_dir.iterdir():
+   if p.is_file():
+    count_1 += 1
+    if p.suffix == '.png':
+      count_3 += 1
+    elif p.suffix == '.mp4':
+      count_4 +=1
+    elif p.suffix == '.mp3':
+      count_5 += 1
+    elif p.suffix == '.exe':
+      count_6 += 1
+    else:
+      count_7 += 1
+   elif p.is_dir():
+    count_2 += 1
+
+  print(f"Total_Folders: {count_1}")
+  print(f"Total Files: {count_2}")
+  print()
+  print(f"Images: {count_3}")
+  print(f"Videos: {count_4}")
+  print(f"Musics: {count_5}")
+  print(f"Executable: {count_6}")
+  print(f"Others: {count_7}")
