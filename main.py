@@ -15,7 +15,12 @@ def main():
     elif choice == 3:
         print("Welcome to view file catagories")
         print("-" * 30)
-        view_catagories()
+        view_filetypes()
+
+    elif choice == 4:
+        print("Welcome to organize file by extension")
+        print("-" * 30)
+        organize_extension()
 
 if __name__ == "__main__":
     main()
